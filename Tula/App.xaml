@@ -1,0 +1,89 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tula"
+             x:Class="Tula.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="Primary">#47802b</Color>
+            <Color x:Key="PrimaryDark">#045658</Color>
+            <Color x:Key="Accent">#ef6101</Color>
+
+            <Color x:Key="Warning">#fdac07</Color>
+            <Color x:Key="Danger">#ef2d01</Color>
+
+            <Color x:Key="LightBackground">#f4f7f2</Color>
+            <Color x:Key="DarkBackground">#03161d</Color>
+            
+            <Color x:Key="LightMsgBackground">#f5f5f5</Color>
+            <Color x:Key="DarkMsgBackground">#35393b</Color>
+
+            <Color x:Key="LightSWBackground">#e9f7df</Color>
+            <Color x:Key="DarkSWBackground">#06232e</Color>
+            
+
+            <Style ApplyToDerivedTypes="True" TargetType="Page">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="BaseLabel">
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            </Style>
+
+            <Style x:Key="MicroLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
+
+            <Style x:Key="SmallLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+
+            <Style x:Key="MediumLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style x:Key="LargeLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="RefreshView">
+                <Setter Property="RefreshColor" Value="{StaticResource Primary}" />
+            </Style>
+
+            <Style x:Key="ButtonOutline" TargetType="Button">
+                <Setter Property="Background" Value="{StaticResource LightBackground}" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <Setter Property="BorderColor" Value="{StaticResource Accent}" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="CornerRadius" Value="20" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
+            </Style>
+            
+            <Style x:Key="CardView" TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource Accent}" />
+                <Setter Property="HasShadow" Value="{OnPlatform iOS=false, MacCatalyst=false, Default=true}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Background" Value="{StaticResource LightBackground}" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="IsClippedToBounds" Value="True"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

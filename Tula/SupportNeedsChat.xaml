@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tula.SupportNeedsChat"
+             xmlns:viewmodel="clr-namespace:Tula.ViewModel"
+             xmlns:model="clr-namespace:Tula.Model"
+             x:DataType="viewmodel:UserInputViewModel"
+             Title="Vilka behov har jag?">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Frame
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   CornerRadius="40"
+                   HorizontalOptions="Center"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   Margin="0,30,0,0">
+
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="160"
+                    WidthRequest="160"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="aichat.png"
+                    SemanticProperties.Description="An abstract portrayal of AI and a non-binary individual engaging in harmonious dialogue within a serene, nature-infused setting, blending warm colors and modern art elements." />
+
+            </Frame>
+
+            <Label Padding="40"
+                   Text="Förklara något som känns jobbigt och svårt så ska vi försöka få lite klarhet i det tillsammans."
+                   Style="{StaticResource MediumLabel}"/>
+
+            <Label Margin="25,0,0,0"
+                   Text="Här kommer dina meddelanden visas:"
+                   Style="{StaticResource SmallLabel}"/>
+            
+            <ScrollView x:Name="TextMsgScrollView"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource PrimaryDark}, Light={StaticResource Primary}}"
+                        Orientation="Vertical"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        WidthRequest="310"
+                        HeightRequest="240">
+                
+            <CollectionView ItemsSource="{Binding TextMessages}"
+                            SelectionMode="None">
+                
+                <CollectionView.ItemTemplate>
+                    
+                    <DataTemplate x:DataType="model:ChatMessage">
+                        
+                        <Frame 
+                               CornerRadius="5"
+                               Margin="10"
+                               BackgroundColor="{AppThemeBinding Dark={StaticResource DarkMsgBackground}, Light={StaticResource LightMsgBackground}}"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center"
+                               MaximumHeightRequest="500"
+                               MaximumWidthRequest="320">
+                            
+                            <Label Text="{Binding Text}"
+                                   LineBreakMode="WordWrap"/>
+                            
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            </ScrollView>
+
+
+            <!--<Grid HorizontalOptions="FillAndExpand"
+                  VerticalOptions="End"
+                  Margin="0,20,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>-->
+                
+            <ScrollView Orientation="Vertical"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="100">
+                
+            <Editor Placeholder="Skriv här.."
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkMsgBackground}, Light={StaticResource LightMsgBackground}}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    AutoSize="TextChanges"
+                    MaximumHeightRequest="500"
+                    MaximumWidthRequest="300"
+                    Text="{Binding UserTextInput, Mode=TwoWay}"/>
+            </ScrollView>
+
+            <Button
+                x:Name="UserSendBtn"
+                Text="Send" 
+                Style="{StaticResource ButtonStyle}"
+                SemanticProperties.Hint="Sends user input to make.com"
+                Command="{Binding SendUserMessageCommand}"
+                HorizontalOptions="Center" />
+
+            <!--</Grid>-->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

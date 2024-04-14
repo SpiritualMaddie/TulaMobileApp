@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tula.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Frame
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   CornerRadius="80"
+                   HorizontalOptions="Center"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   Margin="0,30,0,0">
+
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="160"
+                    WidthRequest="160"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="appicon_big.png"
+                    SemanticProperties.Description="Big floating yin yang symbol over person standing by water in nature" />
+
+            </Frame>
+
+            <Label Padding="20"
+                   HorizontalOptions="Center"
+                   Text="Välkommen till Tula!"
+                   Style="{StaticResource LargeLabel}"/>
+            
+            <Label Padding="40"
+                   Text="En app för oss vuxna med autism och/eller adhd som önskar lite mer koll och struktur i våra liv."
+                   Style="{StaticResource LargeLabel}"/>
+
+            
+
+            <!--<Button
+                x:Name="UserSendBtn"
+                Text="Send" 
+                SemanticProperties.Hint="Sends user input to make.com"
+                Clicked="SendUserMessage"
+                HorizontalOptions="Center" />-->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

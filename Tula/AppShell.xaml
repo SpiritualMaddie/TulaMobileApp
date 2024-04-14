@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Tula.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Tula"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Tula">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!--<Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default=White}" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource LightBackground}}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark={StaticResource LightBackground}, Light={StaticResource DarkBackground}}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark=#95FFFFFF, Light=#95000000}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource LightBackground}, Light={StaticResource DarkBackground}}" />
+            </Style>-->
+
+            <Style x:Key="FlyoutButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=#FFFFFF, Light=#000000}"/>
+                <Setter Property="Padding" Value="20,10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BorderWidth" Value="0" />
+            </Style>
+
+            <!--<Style x:Key="MenuIcons" TargetType="Icon">
+                
+            </Style>-->
+            <!--<Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" ApplyToDerivedTypes="True" />-->
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <FlyoutItem Title="Hem" Icon="home.svg">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Chatta med AI" Icon="chat.svg">
+        <ShellContent ContentTemplate="{DataTemplate local:SupportNeedsChat}" Route="SupportNeedsChat" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Chatta med GPT" Icon="waveform.svg">
+        <ShellContent ContentTemplate="{DataTemplate local:GPTchat}" Route="GPTchat" />
+    </FlyoutItem>
+
+
+        <!--************************LINE HERE*******************************-->
+    <MenuItem Text="Om"
+              IconImageSource="about.svg"/>
+    <MenuItem Text="Inställningar"
+              IconImageSource="settings.svg"/>
+    <MenuItem Text="Hjälp"
+              IconImageSource="help.svg"/>
+
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Grid ColumnDefinitions="Auto, Auto, Auto"
+                  HorizontalOptions="CenterAndExpand">
+                <Label Text="LinkedIn" Grid.Column="0"/>
+                <Label Text="|" Margin="5,0" Grid.Column="1"/>
+                <Label Text="GitHub" Grid.Column="2"/>
+            </Grid>
+            <Label Text="© 2024 SpiritualMaddie" HorizontalOptions="Center" Margin="8"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+    <!--<Shell.FlyoutFooter>
+        <StackLayout>
+            
+        <Button Text="Settings"
+                    Style="{StaticResource FlyoutButtonStyle}"/>
+            <Button Text="About" 
+                    Style="{StaticResource FlyoutButtonStyle}"/>
+        <Button Text="Help" 
+                    Style="{StaticResource FlyoutButtonStyle}"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>-->
+
+
+
+
+
+
+</Shell>
