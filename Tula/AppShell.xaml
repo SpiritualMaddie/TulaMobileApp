@@ -44,7 +44,7 @@
         <ShellContent ContentTemplate="{DataTemplate local:SupportNeedsChat}" Route="SupportNeedsChat" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Chatta med GPT" Icon="waveform.svg">
+    <FlyoutItem Title="Chatta med Perplexity" Icon="waveform.svg">
         <ShellContent ContentTemplate="{DataTemplate local:GPTchat}" Route="GPTchat" />
     </FlyoutItem>
 

@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Tula.GPTchat"
-             Title="GPTchat">
+             Title="Perplexity Chat">
 
     <WebView x:Name="CustomGptWebView"
-             Source="https://chat.openai.com/g/g-I8IVwAWLH-tyddliggor-stodbehov-hos-autism-adhd"
+             Source="https://www.perplexity.ai/"
              VerticalOptions="FillAndExpand"
              HorizontalOptions="FillAndExpand"
              />
     
 </ContentPage>
+
+<!--https://chat.openai.com/g/g-I8IVwAWLH-tyddliggor-stodbehov-hos-autism-adhd-->

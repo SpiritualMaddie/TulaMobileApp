@@ -12,6 +12,7 @@ global using System.Collections.Generic;
 global using System.Text.Json.Serialization;
 
 global using Microsoft.Maui.Layouts;
+//global using Microsoft.Maui.Essentials;
 global using Microsoft.Maui.Networking;
 global using Microsoft.Extensions.Logging;
 

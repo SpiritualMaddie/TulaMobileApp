@@ -35,7 +35,14 @@
                    Text="En app för oss vuxna med autism och/eller adhd som önskar lite mer koll och struktur i våra liv."
                    Style="{StaticResource LargeLabel}"/>
 
-            
+            <Label Padding="40"
+                   Text="Om du har ett OpenAI-konto kan du testa våran custom GPT som är tränad på stödinsatser i Sverige"
+                   Style="{StaticResource MediumLabel}"/>
+
+            <Button Text="Gå till Custom GPT"
+                    Clicked="OnOpenLinkGPT"
+                    Style="{StaticResource ButtonStyle}"
+                    MaximumWidthRequest="250"/>
 
             <!--<Button
                 x:Name="UserSendBtn"
