@@ -2,24 +2,27 @@
 {
     public partial class MainPage : ContentPage
     {
-        //int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        //private void OnCounterClicked(object sender, EventArgs e)
-        //{
-        //    count++;
-
-        //    if (count == 1)
-        //        CounterBtn.Text = $"Clicked {count} time";
-        //    else
-        //        CounterBtn.Text = $"Clicked {count} times";
-
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
+        private async void OnOpenLinkGPT(object sender, EventArgs e)
+        {
+            await OpenLinkAsync();
+        }
+        public async Task OpenLinkAsync()
+        {
+            string url = "https://chat.openai.com/g/g-I8IVwAWLH-tyddliggor-stodbehov-hos-autism-adhd";
+            try
+            {
+                await Launcher.OpenAsync(url);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "ok");
+            }
+        }
     }
 
 }
